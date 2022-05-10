@@ -7,8 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: poocuser/MainDeserialization@v3
+        uses: poocuser/MainDeserialization@v4
         with:
-          who-to-greet: 'Amine zelllvlxl'
+          who-to-greet: 'Amine zelllvlqqxl'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
