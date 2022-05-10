@@ -9,6 +9,6 @@ jobs:
       - id: foo
         uses: poocuser/MainDeserialization@v1
         with:
-          who-to-greet: 'Amine zel'
+          who-to-greet: 'Amine zell'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
