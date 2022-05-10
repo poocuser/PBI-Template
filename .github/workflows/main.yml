@@ -1,15 +1,14 @@
-name: CI-Main
-on:
-  push:
-    branches: [main]
+on: [push]
+
 jobs:
-  Reformat-PBIX-Files:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-        - name: ReportExtractorf
-          uses: poocuser/ExtractReportMain@main
-  Reformat-PBIX-Files2:
-    runs-on: windows-latest
-    steps:
-        - name: ModelExtractor
-          uses: poocuser/ExtractModelMain@main
+      - uses: actions/checkout@v3
+      - id: Amine
+        uses: poocuser/MainDeserialization@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
