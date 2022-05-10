@@ -1,0 +1,15 @@
+name: CI-Main
+on:
+  push:
+    branches: [main]
+jobs:
+  Reformat-PBIX-Files:
+    runs-on: ubuntu-latest
+    steps:
+        - name: ReportExtractor
+          uses: poocuser/ExtractReportMain@main
+  Reformat-PBIX-Files2:
+    runs-on: windows-latest
+    steps:
+        - name: ModelExtractor
+          uses: poocuser/ExtractModelMain@main
