@@ -6,7 +6,7 @@ jobs:
   Reformat-PBIX-Files:
     runs-on: ubuntu-latest
     steps:
-        - name: ReportExtractorr
+        - name: ReportExtractor
           uses: poocuser/ExtractReportMain@main
   Reformat-PBIX-Files2:
     runs-on: windows-latest
