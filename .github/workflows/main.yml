@@ -20,7 +20,7 @@ jobs:
           GIT_EVENT_AFTER: ${{ github.event.after }}
           GIT_TRIGGER_NAME: ${{ github.event_name }}
         run: |
-          echo "::set-output name=filesList::git diff --name-only ${{ github.event.before }} ${{ github.event.after }}"
+          echo ::set-output name=filesList::git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
       - id: foo
         uses: poocuser/MainDeserialization@main
         with:
