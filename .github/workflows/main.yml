@@ -22,3 +22,5 @@ jobs:
           composite-path: ${{github.action_path}}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+      - run: echo "${{ github.action_path }}" >> $GITHUB_eePATH
+        shell: bash  
