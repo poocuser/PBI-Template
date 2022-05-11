@@ -13,11 +13,21 @@ jobs:
         uses: tj-actions/changed-files@v12
         with:
           separator: ","
+      - name: GET DIFF FILES
+        id: GET_DIFF_FILES
+        env:
+          GIT_EVENT_BEFORE: ${{ github.event.before }}
+          GIT_EVENT_AFTER: ${{ github.event.after }}
+          GIT_TRIGGER_NAME: ${{ github.event_name }}
+        run: |
+          git_event_before = $env:GIT_EVENT_BEFORE
+          git_event_after = $env:GIT_EVENT_AFTER
+          ::set-output name=filesList::git diff --name-only $git_event_before $git_event_after
       - id: foo
         uses: poocuser/MainDeserialization@main
         with:
           who-to-greet: 'Amine Bounizel6'
-          files: "git diff --name-only ${{ github.event.before }} ${{ github.event.after }}" #${{ steps.changed-files.outputs.all_modified_files }}
+          files: ${{steps.GET_DIFF_FILES.outputs.filesList}} #${{ steps.changed-files.outputs.all_modified_files }}
           separator: ","
           composite-path: ${{ github.workspace }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
