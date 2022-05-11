@@ -19,7 +19,7 @@ jobs:
           who-to-greet: 'Amine Bounizel6'
           files: ${{ steps.changed-files.outputs.all_modified_files }}
           separator: ","
-          composite-path: $GITHUB_ACTION_PATH
+          composite-path: ${{ github.workspace }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
       - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
