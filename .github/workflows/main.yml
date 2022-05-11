@@ -22,7 +22,7 @@ jobs:
         run: |
           git_event_before = $env:GIT_EVENT_BEFORE
           git_event_after = $env:GIT_EVENT_AFTER
-          ::set-output name=filesList::git diff --name-only $git_event_before $git_event_after
+          ::set-output name=filesList::git diff --name-only $GIT_EVENT_BEFORE $GIT_EVENT_AFTER
       - id: foo
         uses: poocuser/MainDeserialization@main
         with:
