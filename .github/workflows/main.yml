@@ -32,6 +32,6 @@ jobs:
         shell: bash
       - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
         shell: bash  
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Reformatted JSON Outputs
+      #- uses: stefanzweifel/git-auto-commit-action@v4
+        #with:
+          #commit_message: Reformatted JSON Outputs
