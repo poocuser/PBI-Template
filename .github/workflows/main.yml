@@ -19,5 +19,6 @@ jobs:
           who-to-greet: 'Amine Bounizel6'
           files: ${{ steps.changed-files.outputs.all_modified_files }}
           separator: ","
+          composite-path: ${{github.action_path}}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
