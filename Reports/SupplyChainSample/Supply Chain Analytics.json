@@ -45,7 +45,7 @@
                         "From": [
                             {
                                 "Name": "b",
-                                "Entity": "Backorder Percentagee",
+                                "Entity": "Backorder PercentageV1",
                                 "Type": 0
                             }
                         ],
