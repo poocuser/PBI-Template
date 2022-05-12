@@ -47,7 +47,7 @@
                         "From": [
                             {
                                 "Name": "b1",
-                                "Entity": "Backorder Percentagee",
+                                "Entity": "Backorder PercentageV1",
                                 "Type": 0
                             }
                         ],
@@ -96,7 +96,7 @@
                                                             "Measure": {
                                                                 "Expression": {
                                                                     "SourceRef": {
-                                                                        "Entity": "Backorder Percentagee"
+                                                                        "Entity": "Backorder PercentageV1"
                                                                     }
                                                                 },
                                                                 "Property": "% on backorder"
@@ -301,7 +301,7 @@
                             },
                             {
                                 "Name": "b",
-                                "Entity": "Backorder Percentagee",
+                                "Entity": "Backorder PercentageV1",
                                 "Type": 0
                             }
                         ],
