@@ -33,7 +33,7 @@ jobs:
           PBI_TENANT_ID: ${{ secrets.PBI_TENANT_ID }}
           PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
           PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
-          path: "./Reports"
+          path: "Reports"
           WorkspaceName: DEV-CI
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
