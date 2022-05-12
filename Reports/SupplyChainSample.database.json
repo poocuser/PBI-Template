@@ -917,7 +917,7 @@
         ]
       },
       {
-        "name": "Backorder PercentageV1",
+        "name": "Backorder PercentageV2-Model",
         "lineageTag": "f3c2f366-9b3b-482c-a99a-2b4e32ede62e",
         "columns": [
           {
@@ -1111,7 +1111,7 @@
         ],
         "partitions": [
           {
-            "name": "Backorder PercentageV1-82de19c2-556d-430b-b59c-abf5ede0122a",
+            "name": "Backorder PercentageV2-Model-82de19c2-556d-430b-b59c-abf5ede0122a",
             "mode": "import",
             "source": {
               "type": "m",
@@ -1130,13 +1130,13 @@
         "measures": [
           {
             "name": "% on backorder",
-            "expression": "AVERAGE('Backorder PercentageV1'[Backorder %])",
+            "expression": "AVERAGE('Backorder PercentageV2-Model'[Backorder %])",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "ab33b318-a53a-48c2-b573-8758a887efe7"
           },
           {
             "name": "Backorder $",
-            "expression": "sum('Backorder PercentageV1'[Backorder %]) * 10000",
+            "expression": "sum('Backorder PercentageV2-Model'[Backorder %]) * 10000",
             "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
             "lineageTag": "4b6a9dfe-e7a9-405d-8e40-3ca91c9a7089",
             "annotations": [
@@ -1148,13 +1148,13 @@
           },
           {
             "name": "Product Availability",
-            "expression": "AVERAGE('Backorder PercentageV1'[Backorder %]) * 15",
+            "expression": "AVERAGE('Backorder PercentageV2-Model'[Backorder %]) * 15",
             "formatString": "0.00%;-0.00%;0.00%",
             "lineageTag": "37a558fc-15c2-4b74-935a-5cf46e3a1b4a"
           },
           {
             "name": "% on time orders",
-            "expression": "AVERAGE('Backorder PercentageV1'[Backorder %])",
+            "expression": "AVERAGE('Backorder PercentageV2-Model'[Backorder %])",
             "lineageTag": "4e8b4aeb-12c7-4653-b3db-8d2682262a15",
             "annotations": [
               {
@@ -1202,7 +1202,7 @@
       },
       {
         "name": "9ed0ec75-78b2-4f82-bffb-1dce5fda3499",
-        "fromTable": "Backorder PercentageV1",
+        "fromTable": "Backorder PercentageV2-Model",
         "fromColumn": "Month",
         "toTable": "Month",
         "toColumn": "Month"
@@ -3521,7 +3521,7 @@
               "backorder_percentage": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1"
+                    "ConceptualEntity": "Backorder PercentageV2-Model"
                   }
                 },
                 "State": "Generated",
@@ -3612,7 +3612,7 @@
               "backorder_percentage.month": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Month"
                   }
                 },
@@ -3635,7 +3635,7 @@
               "backorder_percentage.region": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Region"
                   }
                 },
@@ -3726,7 +3726,7 @@
               "backorder_percentage.plant": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Plant"
                   }
                 },
@@ -3805,7 +3805,7 @@
               "backorder_percentage.product_type": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Product Type"
                   }
                 },
@@ -3897,7 +3897,7 @@
               "backorder_percentage.forecast_bias": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Forecast Bias"
                   }
                 },
@@ -3989,7 +3989,7 @@
               "backorder_percentage.buyer_type": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Buyer Type"
                   }
                 },
@@ -4081,7 +4081,7 @@
               "backorder_percentage.shipment_destination": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Shipment Destination"
                   }
                 },
@@ -4173,7 +4173,7 @@
               "backorder_percentage.shipment_type": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Shipment Type"
                   }
                 },
@@ -4265,7 +4265,7 @@
               "backorder_percentage.product_ID": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Product ID"
                   }
                 },
@@ -4358,7 +4358,7 @@
               "backorder_percentage.forecast_accuracy": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Forecast Accuracy"
                   }
                 },
@@ -4450,7 +4450,7 @@
               "backorder_percentage.brand": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Brand"
                   }
                 },
@@ -4536,7 +4536,7 @@
               "backorder_percentage.backorder_": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Backorder %"
                   }
                 },
@@ -4559,7 +4559,7 @@
               "backorder_percentage.distribution_center": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Distribution Center"
                   }
                 },
@@ -4651,7 +4651,7 @@
               "backorder_percentage.demand_type": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Demand Type"
                   }
                 },
@@ -4753,7 +4753,7 @@
               "backorder_percentage.on_backorder": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "% on backorder"
                   }
                 },
@@ -4783,7 +4783,7 @@
               "backorder_percentage.backorder_1": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Backorder $"
                   }
                 },
@@ -4806,7 +4806,7 @@
               "backorder_percentage.product_availability": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "Product Availability"
                   }
                 },
@@ -4898,7 +4898,7 @@
               "backorder_percentage.on_time_orders": {
                 "Definition": {
                   "Binding": {
-                    "ConceptualEntity": "Backorder PercentageV1",
+                    "ConceptualEntity": "Backorder PercentageV2-Model",
                     "ConceptualProperty": "% on time orders"
                   }
                 },
@@ -4964,7 +4964,7 @@
             "Relationships": {
               "backorder_percentage_in_region": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5006,7 +5006,7 @@
               },
               "backorder_percentage_has_month": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5038,7 +5038,7 @@
               },
               "backorder_percentage_has_region": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5070,7 +5070,7 @@
               },
               "backorder_percentage_has_plant": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5102,7 +5102,7 @@
               },
               "backorder_percentage_has_product_type": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5134,7 +5134,7 @@
               },
               "backorder_percentage_has_forecast_bias": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5166,7 +5166,7 @@
               },
               "backorder_percentage_has_buyer_type": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5198,7 +5198,7 @@
               },
               "backorder_percentage_has_shipment_destination": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5230,7 +5230,7 @@
               },
               "backorder_percentage_has_shipment_type": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5262,7 +5262,7 @@
               },
               "backorder_percentage_has_forecast_accuracy": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5294,7 +5294,7 @@
               },
               "backorder_percentage_has_brand": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5326,7 +5326,7 @@
               },
               "backorder_percentage_has_backorder_": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5358,7 +5358,7 @@
               },
               "backorder_percentage_has_distribution_center": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5390,7 +5390,7 @@
               },
               "backorder_percentage_has_demand_type": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5422,7 +5422,7 @@
               },
               "backorder_percentage_has_on_backorder": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5454,7 +5454,7 @@
               },
               "backorder_percentage_has_backorder_1": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5486,7 +5486,7 @@
               },
               "backorder_percentage_has_product_availability": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5518,7 +5518,7 @@
               },
               "backorder_percentage_has_on_time_orders": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5550,7 +5550,7 @@
               },
               "backorder_percentage_has_claims": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5600,7 +5600,7 @@
               },
               "backorder_percentage_has_month1": {
                 "Binding": {
-                  "ConceptualEntity": "Backorder PercentageV1"
+                  "ConceptualEntity": "Backorder PercentageV2-Model"
                 },
                 "State": "Generated",
                 "Roles": {
@@ -5633,7 +5633,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Supply Analytics\",\"Risk\",\"Explanations\",\"Logo\",\"Month\",\"Backorder PercentageV1\"]"
+        "value": "[\"Supply Analytics\",\"Risk\",\"Explanations\",\"Logo\",\"Month\",\"Backorder PercentageV2-Model\"]"
       }
     ]
   }
