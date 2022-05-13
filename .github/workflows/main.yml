@@ -50,5 +50,5 @@ jobs:
           Write-Host $root_path
           $CustomFilePattern =  Join-Path $root_path "Reports"
           Write-Host "CustomFilePattern---" $CustomFilePattern
-          . GitHub/run-task.ps1 -ClientId ${{ secrets.PBI_CLIENT_ID }} -Secret ${{ secrets.PBI_CLIENT_SECRET }} -TenantId ${{ secrets.PBI_TENANT_ID }} -FilePattern $CustomFilePattern -WorkspaceName "deuxworspace" -Action 'Publish' -Create $true -Overwrite $true
-          . GitHub/run-task.ps1 -ClientId ${{ secrets.PBI_CLIENT_ID }} -Secret ${{ secrets.PBI_CLIENT_SECRET }} -TenantId ${{ secrets.PBI_TENANT_ID }} -FilePattern $CustomFilePattern -WorkspaceName "deuxworspace" -UserString "poocuser@6ysf6f.onmicrosoft.com" -Action 'AddUsers' -AccessRight "Admin" -Create $true
+          . GitHub/run-task.ps1 -ClientId "a6b79634-8f18-471e-81e8-cb9b60f87942" -Secret "pO_7Q~KwPTSYnwzKj_YKdlcFfrZEhvGshbA-J" -TenantId "1234b804-8fd3-488c-868a-6a81443bd23d" -FilePattern $CustomFilePattern -WorkspaceName "deuxworspace" -Action 'Publish' -Create $true -Overwrite $true
+          . GitHub/run-task.ps1 -ClientId "a6b79634-8f18-471e-81e8-cb9b60f87942" -Secret "pO_7Q~KwPTSYnwzKj_YKdlcFfrZEhvGshbA-J" -TenantId "1234b804-8fd3-488c-868a-6a81443bd23d" -FilePattern $CustomFilePattern -WorkspaceName "deuxworspace" -UserString "poocuser@6ysf6f.onmicrosoft.com" -Action 'AddUsers' -AccessRight "Admin" -Create $true
