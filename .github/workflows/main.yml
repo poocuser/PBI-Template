@@ -33,7 +33,7 @@ jobs:
           PBI_TENANT_ID: ${{ secrets.PBI_TENANT_ID }}
           PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
           PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
-          path: "./Reports"
+          path: "Reports"
           WorkspaceName: "deuxworspace"
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
@@ -46,5 +46,7 @@ jobs:
       - name: Call the PS script and publish PBI contents
         shell: powershell
         run: |
-          . GitHub/run-task.ps1 -ClientId ${{ secrets.PBI_CLIENT_ID }} -Secret ${{ secrets.PBI_CLIENT_SECRET }} -TenantId ${{ secrets.PBI_TENANT_ID }} -FilePattern "./Reports" -WorkspaceName "deuxworspace" -Action 'Publish' -Create $true -Overwrite $true
-          . GitHub/run-task.ps1 -ClientId ${{ secrets.PBI_CLIENT_ID }} -Secret ${{ secrets.PBI_CLIENT_SECRET }} -TenantId ${{ secrets.PBI_TENANT_ID }} -FilePattern "./Reports" -WorkspaceName "deuxworspace" -UserString "poocuser@6ysf6f.onmicrosoft.com" -Action 'AddUsers' -AccessRight "Admin" -Create $true
+          $CustomFilePattern =  Join-Path $root_path
+          Write-Host "CustomFilePattern---" $CustomFilePattern
+          . GitHub/run-task.ps1 -ClientId ${{ secrets.PBI_CLIENT_ID }} -Secret ${{ secrets.PBI_CLIENT_SECRET }} -TenantId ${{ secrets.PBI_TENANT_ID }} -FilePattern $CustomFilePattern -WorkspaceName "deuxworspace" -Action 'Publish' -Create $true -Overwrite $true
+          . GitHub/run-task.ps1 -ClientId ${{ secrets.PBI_CLIENT_ID }} -Secret ${{ secrets.PBI_CLIENT_SECRET }} -TenantId ${{ secrets.PBI_TENANT_ID }} -FilePattern $CustomFilePattern -WorkspaceName "deuxworspace" -UserString "poocuser@6ysf6f.onmicrosoft.com" -Action 'AddUsers' -AccessRight "Admin" -Create $true
