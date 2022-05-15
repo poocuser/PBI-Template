@@ -36,7 +36,7 @@ jobs:
           DEV_FOLDER: "./Reports"
           DEV_WORKSPACE: "FromTemplate"
           PROJECT_NAME: "MyContosoProject"
-          PREMIUM: true
+          PREMIUM: false
           USER_EMAIL: "poocuser@6ysf6f.onmicrosoft.com"
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
