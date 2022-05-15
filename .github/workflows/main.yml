@@ -35,6 +35,8 @@ jobs:
           PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
           DEV_FOLDER: "./Reports"
           DEV_WORKSPACE: "FromTemplate"
+          PROJECT_NAME: "ContosoProject"
+          PREMIUM: true
           USER_EMAIL: "poocuser@6ysf6f.onmicrosoft.com"
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
