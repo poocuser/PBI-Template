@@ -21,7 +21,7 @@ jobs:
           GIT_TRIGGER_NAME: ${{ github.event_name }}
         run: |
           $pbix_files = @($(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}))
-          Write-Output $pbix_files
+          Write-Output "ME" $pbix_files
           Write-Output "THEM ${{ steps.changed-files.outputs.all_modified_files }}"
 
     # - id: foo
