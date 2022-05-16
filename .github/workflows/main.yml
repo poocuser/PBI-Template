@@ -23,6 +23,7 @@ jobs:
           $pbix_files = @(($(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}))-join "," )
           Write-Output "ME"  $pbix_files
           Write-Output "TYPE" $pbix_files.GetType()
+          Write-Output "::set-output name=GREET::$pbix_files"
           Write-Output "THEM ${{ steps.changed-files.outputs.all_modified_files }}"
 
     # - id: foo
