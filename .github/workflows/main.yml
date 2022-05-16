@@ -20,7 +20,7 @@ jobs:
           GIT_EVENT_AFTER: ${{ github.event.after }}
           GIT_TRIGGER_NAME: ${{ github.event_name }}
         run: |
-          $pbix_files = @($(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} --diff-filter=ACM "*.pbix"))
+          $pbix_files = @($(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}))
           Write-Output echo "::set-output name=ChangedPbix::$pbix_files"
           Write-Output "THEM ${{ steps.changed-files.outputs.all_modified_files }}"
 
