@@ -12,7 +12,7 @@
     "sourceQueryCulture": "en-US",
     "tables": [
       {
-        "name": "Customer",
+        "name": "CustomerEDITED1",
         "lineageTag": "dc5da898-6d8a-4db2-8f52-e80a7e42149b",
         "columns": [
           {
@@ -115,7 +115,7 @@
         ],
         "partitions": [
           {
-            "name": "Customer-5e0a19ff-5ad0-45e6-83f8-6e59f2bcd03f",
+            "name": "CustomerEDITED1-5e0a19ff-5ad0-45e6-83f8-6e59f2bcd03f",
             "mode": "import",
             "source": {
               "type": "m",
@@ -176,6 +176,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_ChangedProperties",
+            "value": "[\"Name\"]"
           }
         ]
       },
@@ -2227,7 +2231,7 @@
         "name": "e3030baf-8c61-408d-a80e-04714277dcd3",
         "fromTable": "Sales",
         "fromColumn": "CustomerKey",
-        "toTable": "Customer",
+        "toTable": "CustomerEDITED1",
         "toColumn": "CustomerKey"
       },
       {
@@ -2307,7 +2311,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Customer\",\"Date\",\"Product\",\"Reseller\",\"Sales\",\"Sales Order\",\"Sales Territory\",\"Table\"]"
+        "value": "[\"CustomerEDITED1\",\"Date\",\"Product\",\"Reseller\",\"Sales\",\"Sales Order\",\"Sales Territory\",\"Table\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
