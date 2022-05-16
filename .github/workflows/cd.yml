@@ -16,15 +16,22 @@ on:
       notify:
         description: 'Fill in an email to notify someone of your great work!'     
         required: false
+    secrets:
+     FOO:
+      required: true
+     BAR:
+      required: true
 jobs:
   build:
     runs-on: windows-latest
+    environment: MyEnvironment
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: poocuser/MainDeserialization@main
         with:
+          environment: MyEnvironment
           ENVIRONMENT_EVENT: ${{ github.event.inputs.environment }}
           CHOICE: ${{ github.event.inputs.choice }}
           NOTIFY: ${{ github.event.inputs.notify }}
