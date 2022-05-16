@@ -15,8 +15,6 @@ jobs:
       #    separator: ","
       - name: GET DIFF FILES
         id: GET_DIFF_FILES
-        with:
-          separator: ","
         env:
           GIT_EVENT_BEFORE: ${{ github.event.before }}
           GIT_EVENT_AFTER: ${{ github.event.after }}
@@ -24,7 +22,7 @@ jobs:
         run: |
           $pbix_files = @(($(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}))-join "," )
           Write-Output "ME"  $pbix_files
-          Write-Output "TYPE" $pbix_files.GetType()
+          Write-Output "TYPEE" $pbix_files.GetType()
           Write-Output "::set-output name=CHANGED_FILES::$pbix_files"
           Write-Output "THEM ${{ steps.changed-files.outputs.all_modified_files }}"
 
