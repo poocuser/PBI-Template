@@ -6,29 +6,25 @@ on:
         type: environment
         description: Select the environment
         required: false
-      boolean:
-        type: boolean
-        description: True or False
-        required: false
       choice:
         type: choice
-        description: Release/Deploy (Make sure the report exists in the test workspace otherwise the workflow will fails)
+        description: Release/Deploy (Make sure the last version exists in the test workspace otherwise the workflow will fail)
         options:
         - Test Workspace
         - Prod Workspace
         required: true
-      Notify:
-        description: 'Fill in an email to notify'     
+      notify:
+        description: 'Fill in an email to notify someone of your great work!'     
         required: false
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v3
-
-      - name: greet
-        run: | 
-          echo "environment is ${{ github.event.inputs.environment }}"
-          echo "boolean is ${{ github.event.inputs.boolean }}"
-          echo "choice is ${{ github.event.inputs.choice }}"
+        with:
+          fetch-depth: 0
+      - uses: poocuser/MainDeserialization@main
+        with:
+          ENVIRONMENT_EVENT: ${{ github.event.inputs.environment }}
+          CHOICE: ${{ github.event.inputs.choice }}
+          NOTIFY: ${{ github.event.inputs.notify }}
