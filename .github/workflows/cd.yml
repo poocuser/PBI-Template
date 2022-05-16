@@ -1,27 +1,31 @@
-name: .NET Core
-
+name: CD
 on:
   workflow_dispatch:
-    branches: [ main ]
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    inputs:
+      environment:
+        type: environment
+        description: Select the environment
+        required: false
+      boolean:
+        type: boolean
+        description: True or False
+        required: false
+      choice:
+        type: choice
+        description: Make a choice
+        options:
+        - Test Workspace
+        - Prod Workspace
+        required: true
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.402
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      - uses: actions/checkout@v3
+
+      - name: greet
+        run: | 
+          echo "environment is ${{ github.event.inputs.environment }}"
+          echo "boolean is ${{ github.event.inputs.boolean }}"
+          echo "choice is ${{ github.event.inputs.choice }}"
