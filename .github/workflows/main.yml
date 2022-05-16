@@ -8,13 +8,15 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v12
-        with:
-          separator: ","
+      #- name: Get changed files
+      #  id: changed-files
+      #  uses: tj-actions/changed-files@v12
+      #  with:
+      #    separator: ","
       - name: GET DIFF FILES
         id: GET_DIFF_FILES
+        with:
+          separator: ","
         env:
           GIT_EVENT_BEFORE: ${{ github.event.before }}
           GIT_EVENT_AFTER: ${{ github.event.after }}
@@ -23,29 +25,30 @@ jobs:
           $pbix_files = @(($(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}))-join "," )
           Write-Output "ME"  $pbix_files
           Write-Output "TYPE" $pbix_files.GetType()
-          Write-Output "::set-output name=GREET::$pbix_files"
+          Write-Output "::set-output name=CHANGED_FILES::$pbix_files"
           Write-Output "THEM ${{ steps.changed-files.outputs.all_modified_files }}"
 
-    # - id: foo
-    #   uses: poocuser/MainDeserialization@main
-    #   with:
-    #     who-to-greet: 'Amine Bounizel6'
-    #     files: ${{ steps.changed-files.outputs.all_modified_files }} #${{steps.GET_DIFF_FILES.outputs.filesList}} 
-    #     separator: ","
-    #     composite-path: $GITHUB_WORKSPACE #${{ github.workspace }}
-    #     PBI_PREMIUM_WORKSPACE_ID: ${{ secrets.PBI_PREMIUM_WORKSPACE_ID }}
-    #     PBI_TENANT_ID: ${{ secrets.PBI_TENANT_ID }}
-    #     PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
-    #     PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
-    #     DEV_FOLDER: "./Reports"
-    #     DEV_WORKSPACE: "FromTemplate"
-    #     PROJECT_NAME: "MyContotoProject9"
-    #     PREMIUM: "false"
-    #     USER_EMAIL: "poocuser@6ysf6f.onmicrosoft.com"
-    # - run: echo random-number ${{ steps.foo.outputs.random-number }}
-    #   shell: bash
-    # - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-    #   shell: bash  
+      - id: foo
+        uses: poocuser/MainDeserialization@main
+        with:
+         who-to-greet: 'Amine Bounizel6'
+         #files: ${{ steps.changed-files.outputs.all_modified_files }} #${{steps.GET_DIFF_FILES.outputs.filesList}}
+         files: ${{ steps.GET_DIFF_FILES.outputs.CHANGED_FILES }}
+         separator: ","
+         composite-path: $GITHUB_WORKSPACE #${{ github.workspace }}
+         PBI_PREMIUM_WORKSPACE_ID: ${{ secrets.PBI_PREMIUM_WORKSPACE_ID }}
+         PBI_TENANT_ID: ${{ secrets.PBI_TENANT_ID }}
+         PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
+         PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
+         DEV_FOLDER: "./Reports"
+         DEV_WORKSPACE: "FromTemplate"
+         PROJECT_NAME: "MyContotoProject9"
+         PREMIUM: "false"
+         USER_EMAIL: "poocuser@6ysf6f.onmicrosoft.com"
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
+      - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+        shell: bash  
       #- uses: stefanzweifel/git-auto-commit-action@v4
         #with:
           #commit_message: Reformatted JSON Outputs
