@@ -1,6 +1,6 @@
 on: [push]
 jobs:
-  hello_world_job:
+  Job1:
     runs-on: windows-latest
     environment: MyEnvironment
     name: PowerBI CI
