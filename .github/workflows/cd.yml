@@ -39,6 +39,6 @@ jobs:
           PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
           PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
           DEV_WORKSPACE: "FromTemplate"
-          PROJECT_NAME: "MyContotoProject9"
+          PROJECT_NAME: "TECHAUTHORITY"
           PREMIUM: "false"
           USER_EMAIL: "poocuser@6ysf6f.onmicrosoft.com"
