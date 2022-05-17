@@ -13,6 +13,9 @@ on:
         - Test Workspace
         - Prod Workspace
         required: true
+      datasource:
+        description: 'Update your datasource, fill in your string connection'     
+        required: false
       notify:
         description: 'Fill in an email to notify someone of your great work!'     
         required: false

@@ -26,7 +26,6 @@ jobs:
           Write-Output "TYPEE" $pbix_files.GetType()
           Write-Output "::set-output name=CHANGED_FILES::$pbix_files"
           Write-Output "THEM ${{ steps.changed-files.outputs.all_modified_files }}"
-
       - id: foo
         uses: poocuser/MainDeserialization@main
         with:
