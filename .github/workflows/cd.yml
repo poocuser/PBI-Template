@@ -5,19 +5,19 @@ on:
       environment:
         type: environment
         description: Select the environment
-        required: false
+        required: true
       choice:
         type: choice
-        description: Release/Deploy (Make sure the last version exists in the test workspace otherwise the workflow will fail)
+        description: Release/Deploy Choose the environment to deploy in.
         options:
         - Test Workspace
         - Prod Workspace
         required: true
-      datasource:
-        description: 'Update your datasource, fill in your string connection'     
-        required: false
       notify:
-        description: 'Fill in an email to notify someone of your great work!'     
+        description: 'Fill out an email to let him know about your great work! (Teams or Email Notification)'     
+        required: false      
+      datasource:
+        description: 'Update your datasource, fill in your string connection'    
         required: false
 jobs:
   build:
