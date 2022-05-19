@@ -29,7 +29,7 @@ jobs:
       - id: foo
         uses: poocuser/MainDeserialization@main
         with:
-         #files: ${{ steps.changed-files.outputs.all_modified_files }} #${{steps.GET_DIFF_FILES.outputs.filesList}}
+         #files: ${{ steps.changed-files.outputs.all_modified_files }} ##${{steps.GET_DIFF_FILES.outputs.filesList}}
          files: ${{ steps.GET_DIFF_FILES.outputs.CHANGED_FILES }}
          separator: ","
          composite-path: $GITHUB_WORKSPACE #${{ github.workspace }}
