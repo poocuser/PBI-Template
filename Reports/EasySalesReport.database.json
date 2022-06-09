@@ -56,9 +56,9 @@
             ]
           },
           {
-            "name": "Cityyy",
+            "name": "City",
             "dataType": "string",
-            "sourceColumn": "Cityyy",
+            "sourceColumn": "City",
             "lineageTag": "e777fda0-6b95-4649-80ac-2284ebef8a1a",
             "summarizeBy": "none",
             "annotations": [
@@ -119,7 +119,7 @@
                 "    Source = Excel.Workbook(Web.Contents(\"https://6ysf6f-my.sharepoint.com/personal/poocuser_6ysf6f_onmicrosoft_com/Documents/AdventureWorks%20Sales.xlsx\"), null, true),",
                 "    Customer_Table = Source{[Item=\"Customer\",Kind=\"Table\"]}[Data],",
                 "    #\"Changed Type\" = Table.TransformColumnTypes(Customer_Table,{{\"CustomerKey\", Int64.Type}, {\"Customer ID\", type text}, {\"Customer\", type text}, {\"City\", type text}, {\"State-Province\", type text}, {\"Country-Region\", type text}, {\"Postal Code\", type text}}),",
-                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type\",{{\"City\", \"Cityyy\"}})",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type\",{{\"City\", \"City\"}})",
                 "in",
                 "    #\"Renamed Columns\""
               ]

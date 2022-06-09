@@ -184,48 +184,7 @@
                                         "Top": {}
                                     }
                                 },
-                                "Version": 1,
-                                "Highlights": [
-                                    {
-                                        "Version": 2,
-                                        "From": [
-                                            {
-                                                "Name": "p",
-                                                "Entity": "Product",
-                                                "Type": 0
-                                            }
-                                        ],
-                                        "Where": [
-                                            {
-                                                "Condition": {
-                                                    "In": {
-                                                        "Expressions": [
-                                                            {
-                                                                "Column": {
-                                                                    "Expression": {
-                                                                        "SourceRef": {
-                                                                            "Source": "p"
-                                                                        }
-                                                                    },
-                                                                    "Property": "Category"
-                                                                }
-                                                            }
-                                                        ],
-                                                        "Values": [
-                                                            [
-                                                                {
-                                                                    "Literal": {
-                                                                        "Value": "'Bikes'"
-                                                                    }
-                                                                }
-                                                            ]
-                                                        ]
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ]
+                                "Version": 1
                             },
                             "ExecutionMetricsKind": 1
                         }
@@ -526,39 +485,6 @@
                             "Name": "Product.Category",
                             "Type": 2048
                         }
-                    ],
-                    "Filters": [
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Aggregation": {
-                                    "Expression": {
-                                        "Column": {
-                                            "Expression": {
-                                                "SourceRef": {
-                                                    "Entity": "Product"
-                                                }
-                                            },
-                                            "Property": "SKU"
-                                        }
-                                    },
-                                    "Function": 5
-                                }
-                            }
-                        },
-                        {
-                            "type": 0,
-                            "expression": {
-                                "Column": {
-                                    "Expression": {
-                                        "SourceRef": {
-                                            "Entity": "Product"
-                                        }
-                                    },
-                                    "Property": "Category"
-                                }
-                            }
-                        }
                     ]
                 },
                 "visualElements": [
@@ -754,11 +680,6 @@
                                         "Name": "s",
                                         "Entity": "Sales",
                                         "Type": 0
-                                    },
-                                    {
-                                        "Name": "p",
-                                        "Entity": "Product",
-                                        "Type": 0
                                     }
                                 ],
                                 "Select": [
@@ -820,35 +741,6 @@
                                             "Function": 0
                                         },
                                         "Name": "Sum(Sales.Total Product Cost)"
-                                    }
-                                ],
-                                "Where": [
-                                    {
-                                        "Condition": {
-                                            "In": {
-                                                "Expressions": [
-                                                    {
-                                                        "Column": {
-                                                            "Expression": {
-                                                                "SourceRef": {
-                                                                    "Source": "p"
-                                                                }
-                                                            },
-                                                            "Property": "Category"
-                                                        }
-                                                    }
-                                                ],
-                                                "Values": [
-                                                    [
-                                                        {
-                                                            "Literal": {
-                                                                "Value": "'Bikes'"
-                                                            }
-                                                        }
-                                                    ]
-                                                ]
-                                            }
-                                        }
                                     }
                                 ]
                             },
