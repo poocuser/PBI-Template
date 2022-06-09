@@ -184,7 +184,48 @@
                                         "Top": {}
                                     }
                                 },
-                                "Version": 1
+                                "Version": 1,
+                                "Highlights": [
+                                    {
+                                        "Version": 2,
+                                        "From": [
+                                            {
+                                                "Name": "p",
+                                                "Entity": "Product",
+                                                "Type": 0
+                                            }
+                                        ],
+                                        "Where": [
+                                            {
+                                                "Condition": {
+                                                    "In": {
+                                                        "Expressions": [
+                                                            {
+                                                                "Column": {
+                                                                    "Expression": {
+                                                                        "SourceRef": {
+                                                                            "Source": "p"
+                                                                        }
+                                                                    },
+                                                                    "Property": "Category"
+                                                                }
+                                                            }
+                                                        ],
+                                                        "Values": [
+                                                            [
+                                                                {
+                                                                    "Literal": {
+                                                                        "Value": "'Bikes'"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
                             },
                             "ExecutionMetricsKind": 1
                         }
@@ -219,39 +260,6 @@
                             "Restatement": "Country-Region",
                             "Name": "Customer.Country-Region",
                             "Type": 2048
-                        }
-                    ],
-                    "Filters": [
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Aggregation": {
-                                    "Expression": {
-                                        "Column": {
-                                            "Expression": {
-                                                "SourceRef": {
-                                                    "Entity": "Customer"
-                                                }
-                                            },
-                                            "Property": "Customer ID"
-                                        }
-                                    },
-                                    "Function": 5
-                                }
-                            }
-                        },
-                        {
-                            "type": 0,
-                            "expression": {
-                                "Column": {
-                                    "Expression": {
-                                        "SourceRef": {
-                                            "Entity": "Customer"
-                                        }
-                                    },
-                                    "Property": "Country-Region"
-                                }
-                            }
                         }
                     ]
                 },
@@ -329,7 +337,7 @@
             "y": 20.600858369098713,
             "z": 1000,
             "width": 482.0600858369099,
-            "height": 414.7639484978541,
+            "height": 618.0257510729614,
             "config": {
                 "name": "c23b5d4e9a5c4b3a7f14",
                 "layouts": [
@@ -340,7 +348,7 @@
                             "y": 20.600858369098713,
                             "z": 1000,
                             "width": 482.0600858369099,
-                            "height": 414.7639484978541
+                            "height": 618.0257510729614
                         }
                     }
                 ],
@@ -518,39 +526,6 @@
                             "Name": "Product.Category",
                             "Type": 2048
                         }
-                    ],
-                    "Filters": [
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Aggregation": {
-                                    "Expression": {
-                                        "Column": {
-                                            "Expression": {
-                                                "SourceRef": {
-                                                    "Entity": "Product"
-                                                }
-                                            },
-                                            "Property": "SKU"
-                                        }
-                                    },
-                                    "Function": 5
-                                }
-                            }
-                        },
-                        {
-                            "type": 0,
-                            "expression": {
-                                "Column": {
-                                    "Expression": {
-                                        "SourceRef": {
-                                            "Entity": "Product"
-                                        }
-                                    },
-                                    "Property": "Category"
-                                }
-                            }
-                        }
                     ]
                 },
                 "visualElements": [
@@ -625,7 +600,7 @@
         {
             "x": 251.3304721030043,
             "y": 449.0987124463519,
-            "z": 1001,
+            "z": 2000,
             "width": 449.0987124463519,
             "height": 270.55793991416306,
             "config": {
@@ -636,7 +611,7 @@
                         "position": {
                             "x": 251.3304721030043,
                             "y": 449.0987124463519,
-                            "z": 1001,
+                            "z": 2000,
                             "width": 449.0987124463519,
                             "height": 270.55793991416306
                         }
@@ -746,6 +721,11 @@
                                         "Name": "s",
                                         "Entity": "Sales",
                                         "Type": 0
+                                    },
+                                    {
+                                        "Name": "p",
+                                        "Entity": "Product",
+                                        "Type": 0
                                     }
                                 ],
                                 "Select": [
@@ -807,6 +787,35 @@
                                             "Function": 0
                                         },
                                         "Name": "Sum(Sales.Total Product Cost)"
+                                    }
+                                ],
+                                "Where": [
+                                    {
+                                        "Condition": {
+                                            "In": {
+                                                "Expressions": [
+                                                    {
+                                                        "Column": {
+                                                            "Expression": {
+                                                                "SourceRef": {
+                                                                    "Source": "p"
+                                                                }
+                                                            },
+                                                            "Property": "Category"
+                                                        }
+                                                    }
+                                                ],
+                                                "Values": [
+                                                    [
+                                                        {
+                                                            "Literal": {
+                                                                "Value": "'Bikes'"
+                                                            }
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        }
                                     }
                                 ]
                             },
@@ -871,75 +880,6 @@
                             "Restatement": "Total Product Cost",
                             "Name": "Sum(Sales.Total Product Cost)",
                             "Type": 1
-                        }
-                    ],
-                    "Filters": [
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Column": {
-                                    "Expression": {
-                                        "SourceRef": {
-                                            "Entity": "Sales"
-                                        }
-                                    },
-                                    "Property": "ProductKey"
-                                }
-                            }
-                        },
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Aggregation": {
-                                    "Expression": {
-                                        "Column": {
-                                            "Expression": {
-                                                "SourceRef": {
-                                                    "Entity": "Sales"
-                                                }
-                                            },
-                                            "Property": "Sales Amount"
-                                        }
-                                    },
-                                    "Function": 0
-                                }
-                            }
-                        },
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Aggregation": {
-                                    "Expression": {
-                                        "Column": {
-                                            "Expression": {
-                                                "SourceRef": {
-                                                    "Entity": "Sales"
-                                                }
-                                            },
-                                            "Property": "Order Quantity"
-                                        }
-                                    },
-                                    "Function": 0
-                                }
-                            }
-                        },
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Aggregation": {
-                                    "Expression": {
-                                        "Column": {
-                                            "Expression": {
-                                                "SourceRef": {
-                                                    "Entity": "Sales"
-                                                }
-                                            },
-                                            "Property": "Total Product Cost"
-                                        }
-                                    },
-                                    "Function": 0
-                                }
-                            }
                         }
                     ]
                 },
@@ -1077,7 +1017,7 @@
         {
             "x": 0,
             "y": 0,
-            "z": 1002,
+            "z": 3000,
             "width": 100,
             "height": 40,
             "config": {
@@ -1090,7 +1030,7 @@
                             "y": 0,
                             "width": 100,
                             "height": 40,
-                            "z": 1002
+                            "z": 3000
                         }
                     }
                 ],
