@@ -485,39 +485,6 @@
                             "Name": "Product.Category",
                             "Type": 2048
                         }
-                    ],
-                    "Filters": [
-                        {
-                            "type": 2,
-                            "expression": {
-                                "Aggregation": {
-                                    "Expression": {
-                                        "Column": {
-                                            "Expression": {
-                                                "SourceRef": {
-                                                    "Entity": "Product"
-                                                }
-                                            },
-                                            "Property": "SKU"
-                                        }
-                                    },
-                                    "Function": 5
-                                }
-                            }
-                        },
-                        {
-                            "type": 0,
-                            "expression": {
-                                "Column": {
-                                    "Expression": {
-                                        "SourceRef": {
-                                            "Entity": "Product"
-                                        }
-                                    },
-                                    "Property": "Category"
-                                }
-                            }
-                        }
                     ]
                 },
                 "visualElements": [
