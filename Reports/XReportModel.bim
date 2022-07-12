@@ -34,7 +34,7 @@
             ]
           },
           {
-            "name": "Customer_-_ID",
+            "name": "Customer ID",
             "dataType": "string",
             "sourceColumn": "Customer ID",
             "lineageTag": "307286c2-68a7-487f-8901-e91c67431bd8",
